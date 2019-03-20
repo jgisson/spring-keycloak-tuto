@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "4e99e394-f7af-4c2d-8481-4b4eb53a3887",
+		"name": "Spring Keycloak Tutorials",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "KEYCLOAK  request TOKEN for USER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "1",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "ineat-user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "ineat-web",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "5038c7378-c478-4c5c-a616-c1ddf294cd5",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:28080/auth/realms/ineat-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "28080",
+					"path": [
+						"auth",
+						"realms",
+						"ineat-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "Dont forget to change client-secret with yours"
+			},
+			"response": []
+		},
+		{
+			"name": "KEYCLOAK  request TOKEN for ADMIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "X-CSRF-TOKEN",
+						"value": "1",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "ineat-admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "ineat-web",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "038c7378-c478-4c5c-a616-c1ddf294cdb7",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:28080/auth/realms/ineat-realm/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "28080",
+					"path": [
+						"auth",
+						"realms",
+						"ineat-realm",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "Dont forget to change client-secret with yours"
+			},
+			"response": []
+		},
+		{
+			"name": "Request /user path",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVcWZFMTFEeXdROWp0OHhEd05Bd0M5UGdCMmRTOUNNdlJtZkxMcjFERXBNIn0.eyJqdGkiOiJkMmNhNDEzYi1mM2U5LTRkMzQtODVlZS0wZjhlMmNjZjUzNDkiLCJleHAiOjE1NTMwNzcxMTEsIm5iZiI6MCwiaWF0IjoxNTUzMDc2ODExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjI4MDgwL2F1dGgvcmVhbG1zL2luZWF0LXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjZiYWI3ZGQ3LWE3ZmQtNDgzYS1iNWU5LTUzNWZkZWU5YmMwOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImluZWF0LXdlYiIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6ImViOGMwOGFkLWZhYTUtNGM3Zi1hYmMzLWM1OGFkNzdlNzMxYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkFETUlOIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJJbmVhdCBBZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImluZWF0LWFkbWluIiwiZ2l2ZW5fbmFtZSI6IkluZWF0IiwiZmFtaWx5X25hbWUiOiJBZG1pbiIsImVtYWlsIjoiaW5lYXQtYWRtaW5AdGVzdHMudGVzdHMifQ.V_L830NLc5SFZbYxksMjjRHei03KYdNUmMBxuRUPZiRg3Xf29uaJcqg7PJzJUtgpnCIkWJSMffzZOkKcsTVqgwkEaNByvVUHzp4PeCxgbqztL56u4o3xNpPWgPouZcFeSjvJjjCjhyKpGRkUVzwnoW84yb1vS-NieXICj_CMfYkHU_ToRvagkx_-WjNGmwDNS_h-5_vtj2DrmVLwPromNThhgwo6uOTRxDxvXCzeF6iozFBIAgyabM535VXVeDXDr-lx1Uiimnuu4v-PDtwUDSP5lWv7k3SJWKV09pqJIe5DLUZtY3KDO-lOrrJ62Oh7YlREKwsRnpt7lJl_AQ9kXQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				},
+				"description": "Dont forget to set Bearer value obtains from token request"
+			},
+			"response": []
+		},
+		{
+			"name": "Request /admin path",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVcWZFMTFEeXdROWp0OHhEd05Bd0M5UGdCMmRTOUNNdlJtZkxMcjFERXBNIn0.eyJqdGkiOiJkMmNhNDEzYi1mM2U5LTRkMzQtODVlZS0wZjhlMmNjZjUzNDkiLCJleHAiOjE1NTMwNzcxMTEsIm5iZiI6MCwiaWF0IjoxNTUzMDc2ODExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjI4MDgwL2F1dGgvcmVhbG1zL2luZWF0LXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjZiYWI3ZGQ3LWE3ZmQtNDgzYS1iNWU5LTUzNWZkZWU5YmMwOCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImluZWF0LXdlYiIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6ImViOGMwOGFkLWZhYTUtNGM3Zi1hYmMzLWM1OGFkNzdlNzMxYSIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkFETUlOIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJJbmVhdCBBZG1pbiIsInByZWZlcnJlZF91c2VybmFtZSI6ImluZWF0LWFkbWluIiwiZ2l2ZW5fbmFtZSI6IkluZWF0IiwiZmFtaWx5X25hbWUiOiJBZG1pbiIsImVtYWlsIjoiaW5lYXQtYWRtaW5AdGVzdHMudGVzdHMifQ.V_L830NLc5SFZbYxksMjjRHei03KYdNUmMBxuRUPZiRg3Xf29uaJcqg7PJzJUtgpnCIkWJSMffzZOkKcsTVqgwkEaNByvVUHzp4PeCxgbqztL56u4o3xNpPWgPouZcFeSjvJjjCjhyKpGRkUVzwnoW84yb1vS-NieXICj_CMfYkHU_ToRvagkx_-WjNGmwDNS_h-5_vtj2DrmVLwPromNThhgwo6uOTRxDxvXCzeF6iozFBIAgyabM535VXVeDXDr-lx1Uiimnuu4v-PDtwUDSP5lWv7k3SJWKV09pqJIe5DLUZtY3KDO-lOrrJ62Oh7YlREKwsRnpt7lJl_AQ9kXQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin"
+					]
+				},
+				"description": "Dont forget to set Bearer value obtains from token request"
+			},
+			"response": []
+		}
+	]
+}
